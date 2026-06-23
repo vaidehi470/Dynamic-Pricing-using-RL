@@ -1,14 +1,4 @@
-"""
-Week 4 — Q-Learning Trainer + Evaluator
-=========================================
-Handles the full training loop, evaluation, and mid-project review gate.
 
-Classes
--------
-TrainingLog   — per-episode statistics collected during training
-QTrainer      — runs the training loop, manages ε-schedule, logs results
-MidProjectReview — automated gate check (resource sheet §Week4)
-"""
 
 import sys
 import time
@@ -369,9 +359,9 @@ class MidProjectReview:
 
         print(f"\n{'═'*60}")
         if all_pass:
-            print("  ✅  GATE PASSED — cleared to proceed to Week 5 (DQN/PPO)")
+            print("  GATE PASSED — cleared to proceed to Week 5 (DQN/PPO)")
         else:
-            print("  ❌  GATE FAILED — debug environment or hyperparams before Week 5")
+            print("  GATE FAILED — debug environment or hyperparams before Week 5")
             print("      Hint: check reward scaling, epsilon decay schedule, n_bins")
         print(f"{'═'*60}\n")
 
