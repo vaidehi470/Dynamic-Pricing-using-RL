@@ -1,20 +1,5 @@
-"""
-Week 4 — Main runner script
-============================
-Run this file to:
-  1. Train the Q-learning agent
-  2. Evaluate it against all Week 3 baselines
-  3. Run the mid-project review gate
-  4. Save results to JSON for the widget / report
-
-Usage:  python run_week4.py
-"""
-
 import sys, json, time
 import numpy as np
-
-# sys.path.insert(0, "/mnt/user-data/outputs")
-# sys.path.insert(0, "/home/claude")
 
 from bertrand_pricing_env import BertrandPricingEnv
 from agents import AlwaysNashAgent, AlwaysColludeAgent, TitForTatAgent, RandomAgent
