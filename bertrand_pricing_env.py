@@ -3,11 +3,8 @@ Bertrand Competitive Pricing Environment
 Week 2 — Dynamic Pricing with Reinforcement Learning
 
 A custom OpenAI Gymnasium environment that simulates an oligopolistic
-market where competing firms set prices each period. Built to the spec
-in the Week 2 resource sheet.
+market where competing firms set prices each period.
 
-Author  : Generated for Week 2 project
-Requires: gymnasium>=0.26, numpy
 """
 
 import numpy as np
