@@ -109,4 +109,6 @@ Observations:
 * Learned profits remain stable across evaluation episodes.
 
 ---
+https://docs.google.com/document/d/1Y45gK9Ks0m12VDBFEyBUBPF46MQWL_fG/edit?usp=sharing&ouid=104097020236739041979&rtpof=true&sd=true
 
+you can access the mid-term report from the above drive link 
