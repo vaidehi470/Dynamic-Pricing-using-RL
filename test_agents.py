@@ -1,9 +1,4 @@
-"""
-Test Suite — Week 3 Rule-Based Agents + Tournament
-====================================================
-Run with:  python test_agents.py
-All 30 tests are self-contained (no pytest required).
-"""
+
 
 import sys, math
 import numpy as np
@@ -14,8 +9,8 @@ from bertrand_pricing_env import BertrandPricingEnv
 from agents import AlwaysNashAgent, AlwaysColludeAgent, TitForTatAgent, RandomAgent
 from tournament import Tournament, MatchResult
 
-PASS = "  ✅ PASS"
-FAIL = "  ❌ FAIL"
+PASS = "  PASS"
+FAIL = "  FAIL"
 results = []
 
 def check(name, cond, detail=""):
@@ -34,7 +29,7 @@ print("  WEEK 3 AGENTS — TEST SUITE")
 print("═"*60)
 
 # ── Always-Nash ─────────────────────────────────────────────────────
-print("\n📐 [1] AlwaysNashAgent")
+print("\n [1] AlwaysNashAgent")
 an = AlwaysNashAgent(GRID, NASH)
 check("name is 'Always-Nash'", an.name == "Always-Nash")
 
@@ -55,7 +50,7 @@ for _ in range(20):
 check("Action never changes across steps", len(actions) == 1)
 
 # ── Always-Collude ───────────────────────────────────────────────────
-print("\n🤝 [2] AlwaysColludeAgent")
+print("\n [2] AlwaysColludeAgent")
 ac = AlwaysColludeAgent(GRID, MONO)
 check("name is 'Always-Collude'", ac.name == "Always-Collude")
 
@@ -69,7 +64,7 @@ check("Plays near monopoly price",
 check("Collude price > Nash price", chosen_price > NASH)
 
 # ── Tit-for-Tat ─────────────────────────────────────────────────────
-print("\n🔄 [3] TitForTatAgent")
+print("\n [3] TitForTatAgent")
 tft = TitForTatAgent(GRID, MONO)
 check("name is 'Tit-for-Tat'", tft.name == "Tit-for-Tat")
 
@@ -103,7 +98,7 @@ check("Second move mirrors rival's previous price (injected)",
       f"mirrored={mirrored_price:.2f} rival_t0={fake_rival_price:.2f}")
 
 # ── RandomAgent ─────────────────────────────────────────────────────
-print("\n🎲 [4] RandomAgent")
+print("\n [4] RandomAgent")
 ra = RandomAgent(GRID, seed=42)
 check("name is 'Random'", ra.name == "Random")
 
@@ -190,7 +185,7 @@ check("Random profit > 0 on average",
       f"random profit={pi_random:.0f}")
 
 # ── Tournament smoke test ────────────────────────────────────────────
-print("\n🏆 [8] Tournament (smoke test — 3 eps × 50 steps)")
+print("\n [8] Tournament (smoke test — 3 eps × 50 steps)")
 small_env = BertrandPricingEnv(a=100, b=1.0, d=0.5, marginal_cost=20,
                                 n_price_levels=30, max_steps=50, noise_std=0)
 small_agents = [
@@ -216,7 +211,7 @@ check("Episode logs populated",
 
 # ── CSV export ───────────────────────────────────────────────────────
 import tempfile, os, csv
-print("\n📄 [9] CSV export")
+print("\n [9] CSV export")
 with tempfile.NamedTemporaryFile(suffix=".csv", delete=False, mode="w") as f:
     tmp_path = f.name
 t.export_csv(res, tmp_path)
@@ -232,8 +227,8 @@ print("\n" + "═"*60)
 passed = sum(results); total = len(results)
 print(f"  RESULTS: {passed}/{total} tests passed")
 if passed == total:
-    print("  🎉 All tests passed — agents are production-ready!")
+    print("   All tests passed — agents are production-ready!")
 else:
     failed = [i+1 for i,r in enumerate(results) if not r]
-    print(f"  ⚠️  Failed: {failed}")
+    print(f"    Failed: {failed}")
 print("═"*60 + "\n")
